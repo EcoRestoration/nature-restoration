@@ -1,14 +1,14 @@
 # SITE SETTINGS
 title: Peatland restoration guidelines
-author: NatureRestoration
+author: EcoRestoration
 baseurl: "/nature-restoration"
-url: "https://NatureRestoration.github.io"
+url: "https://EcoRestoration.github.io"
 
 # THEME SETTINGS
 logo: /assets/images/created_logo.png
 
 # BUILD SETTINGS
-repository: NatureRestoration/nature-restoration
+repository: EcoRestoration/nature-restoration
 markdown: kramdown
 plugins:
   - jekyll-feed
