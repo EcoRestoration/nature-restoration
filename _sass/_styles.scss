@@ -4,10 +4,12 @@
 // This file is referenced in your layout's <head> as the compiled CSS.
 // =============================================================================
 
-@import "variables";
-@import "content";
-@import "toc";
-@import "footer";
+---
+---
+@use "variables";
+@use "content";
+@use "toc";
+@use "footer";
 
 // Google Fonts — also add this to _layouts/default.html <head>
 // <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">

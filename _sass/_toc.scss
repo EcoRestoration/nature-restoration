@@ -3,6 +3,7 @@
 // File: _sass/_toc.scss
 // Imported by: _styles.scss
 // =============================================================================
+@use "variables" as *;
 
 .toc-sidebar {
   position: sticky;

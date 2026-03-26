@@ -262,44 +262,71 @@ blockquote {
 
 // ── Hero Section ─────────────────────────────────────────────────────────────
 .hero {
-  background: $deep-forest;
-  padding: $sp-3xl $sp-3xl $sp-2xl;
-  position: relative;
+  position: relative; // Absolute children (attribution) stay inside this box
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
   overflow: hidden;
 
-  &::before {
-    content: '';
+  // FALLBACK COLOR: If no image is present
+  background-color: #6B9080; 
+
+  // IMAGE MODE: Only applies if .has-image class is present
+  &.has-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    // Optional: Darken the image slightly so white text pops
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2; // Sits above the image tint
+    max-width: 900px;
+    padding: 0 20px;
+
+    .hero-eyebrow {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #a4c3b2; // $reed
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin: 0;
+      
+      em { color: #a4c3b2; font-style: italic; }
+    }
+  }
+
+  // AUTHOR CREDIT: Positioned in bottom right
+  .hero-attribution {
     position: absolute;
-    top: 0; right: 0;
-    width: 500px; height: 100%;
-    background: radial-gradient(ellipse at 80% 40%, rgba(107,144,128,0.18) 0%, transparent 70%);
-    pointer-events: none;
+    bottom: 15px;
+    right: 20px;
+    z-index: 10;
+    font-size: 0.75rem;
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 4px 10px;
+    border-radius: 4px;
   }
-
-  .hero-eyebrow {
-    @extend .eyebrow;
-    color: $reed;
-    margin-bottom: $sp-sm;
-  }
-
-  h1 {
-    font-size: $fs-h1-hero;
-    color: $white;
-    line-height: $lh-tight;
-    margin-bottom: 0.5rem;
-
-    em { color: $reed; font-style: italic; }
-  }
-
-  .hero-subtitle {
-    font-size: 0.9375rem;
-    font-weight: 300;
-    color: rgba(164,195,178,0.7);
-    letter-spacing: 0.08em;
-    margin-top: $sp-xs;
-    margin-bottom: $sp-xl;
-  }
-}
+} 
 
 // ── Navbar ────────────────────────────────────────────────────────────────────
 // Navbar styles are in navbar.html inline or you can add here:

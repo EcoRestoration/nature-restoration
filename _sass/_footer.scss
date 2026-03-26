@@ -3,6 +3,7 @@
 // File: _sass/_footer.scss
 // Imported by: _styles.scss
 // =============================================================================
+@use "variables" as *; //it tells Sass: "Take all the variables from that file and let me use them here without typing variables.$ff-sans every time."//
 
 .site-footer {
   background: $deep-forest;
