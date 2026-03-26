@@ -1,7 +1,5 @@
 # File: _data/navigation.yml
 main:
-  - title: Home
-    url: /
   - title: About
     url: /about/
   - title: Peatlands
