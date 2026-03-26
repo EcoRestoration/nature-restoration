@@ -1,16 +1,14 @@
 # File: _data/footer.yml
 tagline: "Peatland restoration guidelines for Europe"
 
-columns:
-  - description: |
-      <div style="display:flex; align-items:center; gap:1rem;">
-        <img src="/nature-restoration/assets/images/eu_logo_geel.jpg" alt="EU logo" style="height:60px;">
-        <a href="https://www.alfawetlands.eu/">
-          <img src="/nature-restoration/assets/images/logo_non_transparent.jpg" alt="ALFAwetlands logo" style="height:60px;">
-        </a>
-      </div>
-  - links:
-    - text: Privacy Policy
-      href: /privacy/
+partners:
+  - name: ALFAwetlands
+    url: https://www.alfawetlands.eu/
+    logo: /assets/images/logo_non_transparent.jpg
+  - name: EU
+    url: https://european-union.europa.eu/
+    logo: /assets/images/eu_logo_geel.jpg
 
-license: >
+links:
+  - title: Privacy
+    url: /privacy/

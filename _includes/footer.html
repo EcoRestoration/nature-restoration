@@ -22,13 +22,12 @@
       </div>
 
       <ul class="footer-links">
-        <li><a href="{{ '/privacy/' | relative_url }}">Privacy</a></li>
-        {% if site.data.footer.links %}
-          {% for link in site.data.footer.links %}
-          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        {% endif %}
-      </ul>
+    {% if site.data.footer.links %}
+    {% for link in site.data.footer.links %}
+    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+  {% endif %}
+</ul>
     </div>
 
   </div>
