@@ -566,3 +566,9 @@ select {
     grid-template-columns: 1fr;
   }
 }
+
+//prevents any element from causing horizontal overflow and pushing the page wider than the viewport.//
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}

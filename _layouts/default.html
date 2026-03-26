@@ -1,5 +1,4 @@
 ---
-layout: base
 ---
 
 <html lang="{{ page.lang | default: 'en' }}">
@@ -21,9 +20,24 @@ layout: base
   <link rel="stylesheet" href="{{ page.custom_css | relative_url }}">
   {% endif %}
 </head>
+
 <body>
 
   {% include navbar.html %}
+
+  <section class="hero {% if page.hero_image %}has-image{% endif %}"
+         style="{% if page.hero_image %}background-image: url('{{ page.hero_image | relative_url }}');{% endif %}">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Peatland restoration guidelines</span>
+    <h1>{{ page.title }}</h1>
+    {% if page.hero_subtitle %}
+      <p class="hero-subtitle">{{ page.hero_subtitle }}</p>
+    {% endif %}
+  </div>
+  {% if page.image_credit %}
+    <div class="hero-attribution">Photo by: {{ page.image_credit }}</div>
+  {% endif %}
+  </section>
 
   <main id="main-content">
     {{ content }}

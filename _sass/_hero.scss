@@ -1,6 +1,9 @@
 // ── Hero Section ─────────────────────────────────────────────────────────────//
 
 .hero {
+  background-color: $sedge; // fallback for pages without image
+  background-size: cover;
+  background-position: center;
   position: relative; /* This is required for absolute positioning to work */
   min-height: 300px; /* Force it to take up space */
   display: flex;     /* Needed to show the content inside */
