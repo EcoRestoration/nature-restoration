@@ -14,18 +14,19 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-remote-theme
+
 exclude:
- - README.md
+  - README.md
   - Gemfile
   - Gemfile.lock
   - LICENSE
 
 # Sass
 sass:
-  sass_dir:  _sass
-  style:     compressed
+  sass_dir: _sass
+  style: compressed
 
-# Collections (if using)
+# Collections
 collections:
   pages:
     output: true
@@ -41,18 +42,15 @@ defaults:
       path: "_pages/home"
     values:
       layout: home
-```
-# FRONTMATTER DEFAULTS
-defaults:
   - scope:
       path: ""
     values:
       layout: default
   - scope:
-      path: pages/peatlands
+      path: "_pages/peatlands"
     values:
       toc: true
-      permalink: pages/peatlands
 
 # cd C:\Users\maud_raman\Documents\GitHub\nature-restoration #
 # For local testing, run: bundle exec jekyll serve --host 0.0.0.0 --baseurl ""
+# bundle exec jekyll serve --baseurl /
