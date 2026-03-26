@@ -303,13 +303,14 @@ blockquote {
 // Navbar styles are in navbar.html inline or you can add here:
 .site-nav {
   background: $deep-forest;
-  padding: 0 $sp-3xl;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  position: relative; /* This ensures it pushes the Hero down */
   height: 60px;
-  position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10;
+  padding: 1rem 2rem; 
   border-bottom: 1px solid rgba($reed, 0.12);
 
   .nav-brand {
