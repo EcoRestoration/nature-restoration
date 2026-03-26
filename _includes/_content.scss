@@ -104,6 +104,7 @@ p {
   margin-bottom: $sp-md;
 }
 
+// hyperlinks
 a {
   color: $sedge;
   text-decoration: none;
@@ -176,6 +177,8 @@ code {
   border-radius: 3px;
 }
 
+//<pre> tells the browser: "Don't touch the spacing or line breaks."
+//<code> tells the browser (and search engines): "This specific text is a computer language."
 pre {
   background: $deep-forest;
   color: $reed;
@@ -191,11 +194,11 @@ pre {
   }
 }
 
-// Images
+// Images, block: the gap disappears, and the image fits perfectly against the bottom of its container.
 img {
   max-width: 100%;
   border-radius: $radius-md;
-  display: block;
+  display: block; 
 }
 
 figcaption {
@@ -205,6 +208,7 @@ figcaption {
   margin-top: $sp-xs;
 }
 
+// the <blockquote> is used to indicate that a section of text is quoted from another source.
 blockquote {
   font-family: $ff-serif;
   font-style: italic;
@@ -299,12 +303,13 @@ blockquote {
 
 // ── Navbar ────────────────────────────────────────────────────────────────────
 // Navbar styles are in navbar.html inline or you can add here:
+// The dot . at the beginning tells the browser: "Find any HTML element labeled with the class name 'site-nav' and apply these styles to it."
 .site-nav {
   background: $deep-forest;
   padding: 0 $sp-3xl;
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 80px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -321,7 +326,7 @@ blockquote {
     align-items: center;
     gap: $sp-xs;
 
-    img { height: 32px; width: auto; border-radius: 0; }
+    img { height: 60px; width: auto; border-radius: 0; }
   }
 
   .nav-links {

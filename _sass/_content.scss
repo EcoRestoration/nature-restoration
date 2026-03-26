@@ -257,27 +257,29 @@ blockquote {
 }
 
 // ── Hero Section ─────────────────────────────────────────────────────────────
-.hero {
-  background: $deep-forest;
-  padding: $sp-3xl $sp-3xl $sp-2xl;
-  position: relative;
-  overflow: hidden;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 500px; height: 100%;
-    background: radial-gradient(ellipse at 80% 40%, rgba(107,144,128,0.18) 0%, transparent 70%);
-    pointer-events: none;
+.hero-section {
+  min-height: 400px; /* Force it to take up space */
+  display: flex;     /* Needed to show the content inside */
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white; 
+
+  /* Specific styling for the Image version */
+  &.has-image {
+    background-size: cover;
+    background-position: center;
+    background-color: #333; 
   }
 
-  .hero-eyebrow {
-    @extend .eyebrow;
-    color: $reed;
-    margin-bottom: $sp-sm;
+  /* Specific styling for the Plain Color version */
+  &.has-color {
+    background-color: #2e7d32; 
   }
 
+  /* These are now nested inside .hero-section */
   h1 {
     font-size: $fs-h1-hero;
     color: $white;

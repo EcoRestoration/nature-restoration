@@ -22,6 +22,18 @@
 
   {% include navbar.html %}
 
+  {% if page.hero_image %}
+  <section class="hero-section has-image" style="background-image: url('{{ page.hero_image | relative_url }}');">
+  {% else %}
+  <section class="hero-section has-color">
+  {% endif %}
+  <div class="hero-inner">
+    <p class="hero-eyebrow">{{ page.eyebrow | default: 'Peatland restoration guidelines' }}</p>
+    <h1>{{ page.hero_title | default: page.title }}</h1>
+    {% if page.hero_subtitle %}<p class="hero-subtitle">{{ page.hero_subtitle }}</p>{% endif %}
+  </div>
+  </section>
+
   <main id="main-content">
     {{ content }}
   </main>
