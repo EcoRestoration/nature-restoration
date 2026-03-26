@@ -1,0 +1,66 @@
+// =============================================================================
+// NatureRestoration — TOC Sidebar
+// File: _sass/_toc.scss
+// Imported by: _styles.scss
+// =============================================================================
+
+.toc-sidebar {
+  position: sticky;
+  top: 80px; // clears navbar height
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  align-self: start;
+
+  .toc-header {
+    font-family: $ff-sans;
+    font-size: $fs-eyebrow;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $sedge;
+    margin-bottom: $sp-xs;
+    padding-bottom: $sp-xs;
+    border-bottom: 1px solid $fen;
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  a {
+    display: block;
+    font-size: $fs-nav;
+    color: $muted;
+    text-decoration: none;
+    border: none;
+    padding: 5px 0 5px 12px;
+    border-left: 2px solid transparent;
+    transition: color $transition-fast, border-color $transition-fast;
+    font-weight: 400;
+
+    &:hover {
+      color: $sedge;
+      border-left-color: $reed;
+    }
+
+    &.active {
+      color: $sedge;
+      border-left-color: $sedge;
+      font-weight: 600;
+    }
+  }
+
+  // Indent h3 entries
+  a[data-level="3"] {
+    padding-left: 22px;
+    font-size: $fs-caption;
+  }
+}
+
+// Scrollbar
+.toc-sidebar::-webkit-scrollbar { width: 3px; }
+.toc-sidebar::-webkit-scrollbar-track { background: transparent; }
+.toc-sidebar::-webkit-scrollbar-thumb { background: $fen; border-radius: 2px; }

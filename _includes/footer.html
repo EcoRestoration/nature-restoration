@@ -1,0 +1,35 @@
+<!-- File: _includes/footer.html -->
+<!-- Partner logos are defined in _data/footer.yml -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <!-- Partner logos -->
+    {% if site.data.footer.partners %}
+    <div class="footer-logos">
+      {% for partner in site.data.footer.partners %}
+        <a href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name }}">
+          <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }}">
+        </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Bottom row -->
+    <div class="footer-bottom">
+      <div>
+        <p class="footer-brand">ALFAwetlands</p>
+        <p class="footer-meta">{{ site.data.footer.tagline | default: 'Peatland restoration guidelines' }} · {{ site.time | date: '%Y' }}</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="{{ '/privacy/' | relative_url }}">Privacy</a></li>
+        {% if site.data.footer.links %}
+          {% for link in site.data.footer.links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+
+  </div>
+</footer>

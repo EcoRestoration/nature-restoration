@@ -1,0 +1,608 @@
+// =============================================================================
+// NatureRestoration — Content & Component Styles
+// File: _sass/_content.scss
+// Imported by: _styles.scss
+// =============================================================================
+
+// ── Reset & Base ──────────────────────────────────────────────────────────────
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: $ff-sans;
+  font-size: $fs-body;
+  line-height: $lh-body;
+  color: $bog-ink;
+  background: $white;
+}
+
+// ── Google Fonts CSS Variables (for use anywhere) ─────────────────────────────
+:root {
+  --sedge:       #{$sedge};
+  --reed:        #{$reed};
+  --fen:         #{$fen};
+  --mist:        #{$mist};
+  --bloom:       #{$bloom};
+  --deep-forest: #{$deep-forest};
+  --bog-ink:     #{$bog-ink};
+  --deep-sedge:  #{$deep-sedge};
+  --muted:       #{$muted};
+  --peat-gold:       #{$peat-gold};
+  --peat-gold-light: #{$peat-gold-light};
+  --white:       #{$white};
+  --ff-serif:    #{$ff-serif};
+  --ff-sans:     #{$ff-sans};
+}
+
+// ── Typography ────────────────────────────────────────────────────────────────
+
+// Markdown content is wrapped in .page-content
+// Headings inside .page-content are auto-styled.
+// Each h1 triggers a new section (handled via JS in default.html).
+
+h1, h2, h3, h4 {
+  font-family: $ff-serif;
+  color: $deep-forest;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: $fs-h1-page;
+  line-height: $lh-tight;
+  letter-spacing: -0.01em;
+  margin-bottom: $sp-md;
+}
+
+h2 {
+  font-size: $fs-h2;
+  font-weight: 600;
+  line-height: $lh-heading;
+  letter-spacing: -0.005em;
+  margin-top: $sp-2xl;
+  margin-bottom: $sp-sm;
+}
+
+h3 {
+  font-size: $fs-h3;
+  font-weight: 600;
+  line-height: $lh-sub;
+  margin-top: $sp-lg;
+  margin-bottom: $sp-xs;
+}
+
+h4 {
+  font-family: $ff-sans;
+  font-size: $fs-body;
+  font-weight: 600;
+  color: $muted;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: $sp-md;
+  margin-bottom: $sp-xs;
+}
+
+p {
+  font-family: $ff-sans;
+  font-size: $fs-body;
+  line-height: $lh-body;
+  color: $bog-ink;
+  margin-bottom: $sp-sm;
+  max-width: $max-body;
+}
+
+// Lead paragraph — first <p> after h1 or .lead class
+.lead, .page-content > p:first-of-type {
+  font-size: $fs-lead;
+  font-weight: 300;
+  color: $muted;
+  line-height: $lh-lead;
+  margin-bottom: $sp-md;
+}
+
+a {
+  color: $sedge;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1.5px solid $fen;
+  padding-bottom: 1px;
+  transition: border-color $transition-base, color $transition-base;
+
+  &:hover {
+    color: $deep-sedge;
+    border-bottom-color: $sedge;
+  }
+}
+
+strong { font-weight: 600; color: $deep-forest; }
+em     { font-style: italic; color: $muted; }
+
+// Caption / small
+small, .caption, figcaption {
+  font-size: $fs-caption;
+  color: $muted;
+  line-height: $lh-caption;
+  letter-spacing: 0.02em;
+  display: block;
+  margin-top: $sp-xs;
+}
+
+// Eyebrow label — add class="eyebrow" or use the include
+.eyebrow {
+  font-family: $ff-sans;
+  font-size: $fs-eyebrow;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: $sedge;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+// Horizontal rule
+hr {
+  border: none;
+  width: 40px;
+  height: 2px;
+  background: $sedge;
+  border-radius: 2px;
+  margin: $sp-sm 0 $sp-xl;
+}
+
+// Lists
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: $sp-sm;
+
+  li {
+    font-size: $fs-body;
+    line-height: $lh-body;
+    color: $bog-ink;
+    margin-bottom: 0.25rem;
+  }
+}
+
+// Code / monospace
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.88em;
+  background: $mist;
+  color: $muted;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+pre {
+  background: $deep-forest;
+  color: $reed;
+  padding: $sp-md;
+  border-radius: $radius-md;
+  overflow-x: auto;
+  margin-bottom: $sp-sm;
+
+  code {
+    background: none;
+    color: inherit;
+    padding: 0;
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  border-radius: $radius-md;
+  display: block;
+}
+
+figcaption {
+  font-size: $fs-caption;
+  color: $muted;
+  text-align: center;
+  margin-top: $sp-xs;
+}
+
+blockquote {
+  font-family: $ff-serif;
+  font-style: italic;
+  font-size: 1.125rem;
+  color: $muted;
+  border-left: 3px solid $sedge;
+  padding: $sp-sm $sp-md;
+  margin: $sp-md 0;
+  background: $bloom;
+  border-radius: 0 $radius-sm $radius-sm 0;
+}
+
+// ── Section System ────────────────────────────────────────────────────────────
+// Each h1 on a content page is wrapped in a .page-section by JS (see default.html)
+// Sections alternate between white and $mist background
+
+.page-section {
+  padding: $sp-3xl 0;
+  border-bottom: 1px solid $mist;
+
+  &:nth-child(even) {
+    background: $bloom;
+  }
+
+  &:nth-child(odd) {
+    background: $white;
+  }
+
+  // Inner wrapper constrains content width
+  .section-inner {
+    max-width: $max-content;
+    margin: 0 auto;
+    padding: 0 $sp-3xl;
+  }
+}
+
+// ── Page Layout ───────────────────────────────────────────────────────────────
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 1fr $sidebar-w;
+  gap: $sp-2xl;
+  max-width: $max-content;
+  margin: 0 auto;
+  padding: $sp-3xl $sp-lg $sp-3xl $sp-3xl;
+  align-items: start;
+}
+
+.page-content {
+  min-width: 0; // prevent grid blowout
+}
+
+// ── Hero Section ─────────────────────────────────────────────────────────────
+.hero {
+  background: $deep-forest;
+  padding: $sp-3xl $sp-3xl $sp-2xl;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 500px; height: 100%;
+    background: radial-gradient(ellipse at 80% 40%, rgba(107,144,128,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    @extend .eyebrow;
+    color: $reed;
+    margin-bottom: $sp-sm;
+  }
+
+  h1 {
+    font-size: $fs-h1-hero;
+    color: $white;
+    line-height: $lh-tight;
+    margin-bottom: 0.5rem;
+
+    em { color: $reed; font-style: italic; }
+  }
+
+  .hero-subtitle {
+    font-size: 0.9375rem;
+    font-weight: 300;
+    color: rgba(164,195,178,0.7);
+    letter-spacing: 0.08em;
+    margin-top: $sp-xs;
+    margin-bottom: $sp-xl;
+  }
+}
+
+// ── Navbar ────────────────────────────────────────────────────────────────────
+// Navbar styles are in navbar.html inline or you can add here:
+.site-nav {
+  background: $deep-forest;
+  padding: 0 $sp-3xl;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba($reed, 0.12);
+
+  .nav-brand {
+    font-family: $ff-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: $white;
+    text-decoration: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: $sp-xs;
+
+    img { height: 32px; width: auto; border-radius: 0; }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: $sp-md;
+    margin-left: auto;
+    list-style: none;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-family: $ff-sans;
+    font-size: $fs-nav;
+    font-weight: 400;
+    color: rgba($reed, 0.65);
+    text-decoration: none;
+    border: none;
+    letter-spacing: 0.03em;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: color $transition-base, border-color $transition-base;
+
+    &:hover, &.active {
+      color: $fen;
+      border-bottom-color: $reed;
+    }
+  }
+
+  // Dropdown
+  .nav-dropdown {
+    position: relative;
+
+    &:hover .dropdown-menu {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+
+    .dropdown-toggle::after {
+      content: ' ▾';
+      font-size: 0.6em;
+      opacity: 0.6;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 0;
+      background: $deep-forest;
+      border: 1px solid rgba($reed, 0.15);
+      border-radius: $radius-md;
+      padding: $sp-xs 0;
+      min-width: 200px;
+      list-style: none;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity $transition-base, transform $transition-base;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+
+      li a {
+        display: block;
+        padding: $sp-xs $sp-sm;
+        font-size: $fs-nav;
+        color: rgba($reed, 0.7);
+        text-decoration: none;
+        border: none;
+        transition: background $transition-fast, color $transition-fast;
+
+        &:hover {
+          background: rgba($fen, 0.06);
+          color: $fen;
+        }
+      }
+    }
+  }
+}
+
+// ── Buttons ───────────────────────────────────────────────────────────────────
+%btn-base {
+  font-family: $ff-sans;
+  font-size: $fs-btn;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 11px 24px;
+  border-radius: $radius-sm;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background $transition-base, color $transition-base, border-color $transition-base;
+  border-bottom: none; // override global link style
+  line-height: 1;
+}
+
+.btn-primary {
+  @extend %btn-base;
+  background: $sedge;
+  color: $white;
+
+  &:hover { background: $deep-sedge; color: $white; border-bottom: none; }
+  &:disabled, &[disabled] { opacity: 0.45; cursor: not-allowed; }
+}
+
+.btn-secondary {
+  @extend %btn-base;
+  background: transparent;
+  color: $sedge;
+  border: 1.5px solid $sedge;
+
+  &:hover { background: $fen; color: $sedge; border-color: $sedge; }
+}
+
+.btn-ghost {
+  @extend %btn-base;
+  background: transparent;
+  color: $muted;
+  border: 1.5px solid $fen;
+
+  &:hover { border-color: $reed; color: $sedge; }
+}
+
+// ── Cards ─────────────────────────────────────────────────────────────────────
+.card {
+  background: $white;
+  border: $border-card;
+  border-radius: $radius-md;
+  padding: $sp-md $sp-md $sp-lg;
+
+  .card-label {
+    font-size: $fs-caption;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $sedge;
+    display: block;
+    margin-bottom: $sp-xs;
+  }
+
+  .card-title {
+    font-family: $ff-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: $deep-forest;
+    line-height: $lh-sub;
+    margin-bottom: $sp-xs;
+  }
+
+  .card-excerpt {
+    font-size: 0.8125rem;
+    font-weight: 300;
+    color: $muted;
+    line-height: 1.65;
+  }
+
+  .card-tag {
+    display: inline-block;
+    font-size: $fs-eyebrow;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $sedge;
+    background: $mist;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: $sp-xs;
+    border: none;
+  }
+}
+
+// Card grid
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $sp-sm;
+  margin: $sp-lg 0;
+}
+
+// ── Callout Blocks ────────────────────────────────────────────────────────────
+.callout {
+  padding: $sp-sm $sp-md;
+  border-radius: 0 $radius-sm $radius-sm 0;
+  margin: $sp-md 0;
+
+  .callout-label {
+    font-size: $fs-eyebrow;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.375rem;
+    display: block;
+  }
+
+  p { font-size: 0.875rem; line-height: 1.7; margin: 0; }
+}
+
+.callout-green {
+  @extend .callout;
+  background: $mist;
+  border-left: 3px solid $sedge;
+
+  .callout-label { color: $sedge; }
+  p { color: $bog-ink; }
+}
+
+.callout-gold {
+  @extend .callout;
+  background: $peat-gold-light;
+  border-left: 3px solid $peat-gold;
+
+  .callout-label { color: #7a6030; }
+  p { color: #5a4020; }
+}
+
+// ── Forms & Inputs ────────────────────────────────────────────────────────────
+label {
+  display: block;
+  font-size: $fs-caption;
+  font-weight: 600;
+  color: $muted;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.375rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea,
+select {
+  font-family: $ff-sans;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 10px 14px;
+  border: $border-input;
+  border-radius: $radius-sm;
+  background: $white;
+  color: $bog-ink;
+  outline: none;
+  transition: border-color $transition-base;
+  width: 100%;
+
+  &:focus    { border-color: $sedge; }
+  &::placeholder { color: $reed; }
+}
+
+// ── Utility Classes ───────────────────────────────────────────────────────────
+.text-muted   { color: $muted; }
+.text-sedge   { color: $sedge; }
+.text-serif   { font-family: $ff-serif; }
+.text-center  { text-align: center; }
+.mt-0         { margin-top: 0; }
+.mb-0         { margin-bottom: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+// ── Responsive ────────────────────────────────────────────────────────────────
+@media (max-width: 900px) {
+  .page-wrapper {
+    grid-template-columns: 1fr;
+    padding: $sp-md;
+  }
+
+  .site-nav {
+    padding: 0 $sp-sm;
+
+    .nav-dropdown .dropdown-menu {
+      position: static;
+      opacity: 1;
+      pointer-events: all;
+      transform: none;
+      box-shadow: none;
+      display: none;
+    }
+  }
+
+  .page-section .section-inner {
+    padding: 0 $sp-sm;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

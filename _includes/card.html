@@ -1,0 +1,21 @@
+<!--
+Usage:
+{% include card.html
+   tag="Bogs"
+   title="Sphagnum moss establishment"
+   excerpt="Practical guide to rewetting and monitoring."
+   url="/peatlands/guidelines/"
+%}
+-->
+<div class="card">
+  {% if include.tag %}
+    <span class="card-tag">{{ include.tag }}</span>
+  {% endif %}
+  <p class="card-title">{{ include.title }}</p>
+  {% if include.excerpt %}
+    <p class="card-excerpt">{{ include.excerpt }}</p>
+  {% endif %}
+  {% if include.url %}
+    <a href="{{ include.url | relative_url }}" class="btn-secondary" style="margin-top:1rem;">Read more</a>
+  {% endif %}
+</div>

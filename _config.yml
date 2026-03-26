@@ -1,0 +1,58 @@
+# SITE SETTINGS
+title: Peatland restoration guidelines
+author: NatureRestoration
+baseurl: "/nature-restoration"
+url: "https://NatureRestoration.github.io"
+
+# THEME SETTINGS
+logo: /assets/images/created_logo.png
+
+# BUILD SETTINGS
+repository: NatureRestoration/nature-restoration
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-remote-theme
+exclude:
+ - README.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+
+# Sass
+sass:
+  sass_dir:  _sass
+  style:     compressed
+
+# Collections (if using)
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: "_pages"
+    values:
+      layout: base
+  - scope:
+      path: "_pages/home"
+    values:
+      layout: home
+```
+# FRONTMATTER DEFAULTS
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: pages/peatlands
+    values:
+      toc: true
+      permalink: pages/peatlands
+
+# cd C:\Users\maud_raman\Documents\GitHub\nature-restoration #
+# For local testing, run: bundle exec jekyll serve --host 0.0.0.0 --baseurl ""

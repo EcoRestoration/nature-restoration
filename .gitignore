@@ -1,0 +1,13 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
+_sass/bootstrap/
+petridish-3.1/
+petridish.zip
+
+# Mac OS X
+.DS_Store

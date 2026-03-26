@@ -1,0 +1,41 @@
+<!-- File: _includes/toc.html -->
+{% if page.toc != false %}
+<div class="toc-sidebar" id="toc-sidebar">
+  <span class="toc-header">On this page</span>
+  <nav id="toc-nav" aria-label="Page contents">
+    <!-- Populated by JS below -->
+  </nav>
+</div>
+
+<script>
+  (function () {
+    const nav = document.getElementById('toc-nav');
+    if (!nav) return;
+
+    const headings = document.querySelectorAll('.page-content h1, .page-content h2, .page-content h3');
+    if (!headings.length) { document.getElementById('toc-sidebar').style.display = 'none'; return; }
+
+    headings.forEach(function (heading) {
+      // Auto-generate id if missing
+      if (!heading.id) {
+        heading.id = heading.textContent
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-|-$/g, '');
+      }
+
+      const link = document.createElement('a');
+      link.href = '#' + heading.id;
+      link.textContent = heading.textContent;
+      link.dataset.level = heading.tagName.slice(1); // "1", "2", or "3"
+
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById(heading.id).scrollIntoView({ behavior: 'smooth' });
+      });
+
+      nav.appendChild(link);
+    });
+  })();
+</script>
+{% endif %}

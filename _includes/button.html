@@ -1,0 +1,5 @@
+<!-- Usage: {% include button.html text="View guidelines" url="/peatlands/" variant="primary" %} -->
+<a href="{{ include.url | default: '#' }}"
+   class="btn-{{ include.variant | default: 'primary' }}">
+  {{ include.text }}
+</a>

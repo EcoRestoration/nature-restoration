@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<div class="hero">
+  <p class="hero-eyebrow">{{ page.eyebrow | default: 'ALFAwetlands · Restoration Guidelines' }}</p>
+  <h1>{{ page.hero_title | default: page.title }}</h1>
+  {% if page.hero_subtitle %}
+  <p class="hero-subtitle">{{ page.hero_subtitle }}</p>
+  {% endif %}
+</div>
+
+{{ content }}

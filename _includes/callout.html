@@ -1,0 +1,15 @@
+<!--
+Usage:
+{% include callout.html
+   type="green"
+   label="Practitioner note"
+   text="Site-specific assessment is required before any rewetting intervention."
+%}
+type: "green" or "gold"
+-->
+<div class="callout-{{ include.type | default: 'green' }}">
+  {% if include.label %}
+    <span class="callout-label">{{ include.label }}</span>
+  {% endif %}
+  <p>{{ include.text }}</p>
+</div>

@@ -1,0 +1,15 @@
+# File: _data/navigation.yml
+main:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Peatlands
+    url: /peatlands/
+    children:
+      - title: Peatlands in the EU
+        url: /peatlands/peatlands-eu/
+      - title: Guidelines
+        url: /peatlands/guidelines/
+      - title: Best Practices
+        url: /peatlands/best-practices/

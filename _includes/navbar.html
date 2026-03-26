@@ -1,0 +1,39 @@
+<!-- File: _includes/navbar.html -->
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="{{ '/' | relative_url }}" class="nav-brand" aria-label="ALFAwetlands home">
+    <!-- Replace src with your actual logo path -->
+    <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="ALFAwetlands logo" onerror="this.style.display='none'">
+    ALFAwetlands
+  </a>
+
+  <ul class="nav-links">
+    {% for item in site.data.navigation.main %}
+      {% if item.children %}
+        <li class="nav-dropdown">
+          <a href="{{ item.url | relative_url }}" class="nav-link dropdown-toggle
+            {% if page.url contains item.url %} active{% endif %}">
+            {{ item.title }}
+          </a>
+          <ul class="dropdown-menu">
+            {% for child in item.children %}
+              <li>
+                <a href="{{ child.url | relative_url }}"
+                   {% if page.url == child.url %} aria-current="page"{% endif %}>
+                  {{ child.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% else %}
+        <li>
+          <a href="{{ item.url | relative_url }}" class="nav-link
+            {% if page.url == item.url %} active{% endif %}"
+            {% if page.url == item.url %}aria-current="page"{% endif %}>
+            {{ item.title }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
