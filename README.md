@@ -1,6 +1,6 @@
-# **restoration-guidelines**
+# **nature-restoration**
 
-restoration-guidelines is a website offering restoration guidelines for different ecosystems
+nature-restoration is a website offering restoration guidelines for different ecosystems
 
 The part concerning peatland-restoration is set up in the framework of ALFAwetlands.
 The ultimate goal of ALFAwetlands is to improve the geospatial knowledge base of wetlands, to evaluate the pathways of wetland restoration that incorporate a co-creation process and to provide information and indicators for sustainability to maximise climate change mitigation, biodiversity and other benefits. See also the ALFAwetlands webpage: https://alfawetlands.eu/.
