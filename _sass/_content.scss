@@ -3,7 +3,6 @@
 // File: _sass/_content.scss
 // Imported by: _styles.scss
 // =============================================================================
-@use "variables" as *;
 
 // ── Reset & Base ──────────────────────────────────────────────────────────────
 *, *::before, *::after {
@@ -255,63 +254,6 @@ blockquote {
 
 .page-content {
   min-width: 0; // prevent grid blowout
-}
-
-// ── Hero Section ─────────────────────────────────────────────────────────────//
-
-.hero-section {
-  position: relative; /* This is required for absolute positioning to work */
-  min-height: 300px; /* Force it to take up space */
-  display: flex;     /* Needed to show the content inside */
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #ffffff; 
-
-  /* Specific styling for the Image version */
-  &.has-image {
-    background-size: cover;
-    background-position: center;
-    background-color: #333; 
-  }
-
-  /* Specific styling for the Plain Color version */
-  &.has-color {
-    background-color: #2e7d32; 
-  }
-
-  /* These are now nested inside .hero-section */
-  h1 {
-    font-size: 3rem;
-    color: #ffffff;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-
-    em { color: #a4c3b2; font-style: italic; }
-  }
-
-  .hero-subtitle {
-    font-size: 0.9375rem;
-    font-weight: 300;
-    color: rgba(164,195,178,0.7);
-    letter-spacing: 0.08em;
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-  }
-
-  hero-attribution {
-    position: absolute;
-    bottom: 15px;      /* Distance from the bottom edge */
-    right: 20px;       /* Distance from the right edge */
-    font-size: 0.75rem; /* Small, subtle text */
-    color: rgba(255, 255, 255, 0.7); /* Slightly transparent */
-    font-family: $ff-sans;
-    background: rgba(0, 0, 0, 0.3); /* Dark box to make it readable on light photos */
-    padding: 4px 10px;
-    border-radius: 4px;
-    pointer-events: none; /* Ensures it doesn't block clicks */
-  }
 }
 
 // ── Navbar ────────────────────────────────────────────────────────────────────

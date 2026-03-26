@@ -1,6 +1,7 @@
 ---
 ---
-@use "variables";
-@use "content";
-@use "toc";
-@use "footer";
+@import "variables";
+@import "hero";
+@import "content";
+@import "toc";
+@import "footer";
