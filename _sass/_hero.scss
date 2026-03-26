@@ -1,6 +1,6 @@
 // ── Hero Section ─────────────────────────────────────────────────────────────//
 
-.hero-section {
+.hero {
   position: relative; /* This is required for absolute positioning to work */
   min-height: 300px; /* Force it to take up space */
   display: flex;     /* Needed to show the content inside */
@@ -41,7 +41,7 @@
     margin-bottom: 2rem;
   }
 
-  hero-attribution {
+  .hero-attribution {
     position: absolute;
     bottom: 15px;      /* Distance from the bottom edge */
     right: 20px;       /* Distance from the right edge */
