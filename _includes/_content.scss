@@ -262,72 +262,40 @@ blockquote {
 
 // ── Hero Section ─────────────────────────────────────────────────────────────
 .hero {
-  position: relative; // Absolute children (attribution) stay inside this box
-  min-height: 450px;
+  position: relative;
+  min-height: 300px;           /* Increased height to ensure it's visible */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #ffffff;
+  color: #ffffff !important;   /* Force white text */
   overflow: hidden;
+  background-color: #6B9080;
+  background-size: cover;
+  background-position: center; 
 
-  // FALLBACK COLOR: If no image is present
-  background-color: #6B9080; 
-
-  // IMAGE MODE: Only applies if .has-image class is present
-  &.has-image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    // Optional: Darken the image slightly so white text pops
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 1;
-    }
-  }
-
-  .hero-inner {
+.hero-inner {
     position: relative;
-    z-index: 2; // Sits above the image tint
-    max-width: 900px;
-    padding: 0 20px;
-
-    .hero-eyebrow {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #a4c3b2; // $reed
-      margin-bottom: 1rem;
-    }
-
+    z-index: 5;
+    
     h1 {
-      font-size: 3rem;
-      line-height: 1.1;
+      font-size: 3.5rem;
       margin: 0;
-      
-      em { color: #a4c3b2; font-style: italic; }
+      color: #ffffff;
     }
   }
 
-  // AUTHOR CREDIT: Positioned in bottom right
   .hero-attribution {
     position: absolute;
-    bottom: 15px;
+    bottom: 20px;
     right: 20px;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    font-size: 0.8rem;
     z-index: 10;
-    font-size: 0.75rem;
-    font-family: sans-serif;
-    color: rgba(255, 255, 255, 0.8);
-    background: rgba(0, 0, 0, 0.4);
-    padding: 4px 10px;
-    border-radius: 4px;
   }
-} 
-
+}
 // ── Navbar ────────────────────────────────────────────────────────────────────
 // Navbar styles are in navbar.html inline or you can add here:
 // The dot . at the beginning tells the browser: "Find any HTML element labeled with the class name 'site-nav' and apply these styles to it."
