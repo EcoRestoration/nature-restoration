@@ -103,6 +103,7 @@ p {
   line-height: $lh-lead;
   margin-bottom: $sp-md;
 }
+// hyperlinks
 
 a {
   color: $sedge;
@@ -128,7 +129,7 @@ small, .caption, figcaption {
   line-height: $lh-caption;
   letter-spacing: 0.02em;
   display: block;
-  margin-top: $sp-xs;
+  margin-top: $sp-md;
 }
 
 // Eyebrow label — add class="eyebrow" or use the include
@@ -176,6 +177,8 @@ code {
   border-radius: 3px;
 }
 
+//<pre> tells the browser: "Don't touch the spacing or line breaks."
+//<code> tells the browser (and search engines): "This specific text is a computer language."
 pre {
   background: $deep-forest;
   color: $reed;
@@ -205,6 +208,7 @@ figcaption {
   margin-top: $sp-xs;
 }
 
+// the <blockquote> is used to indicate that a section of text is quoted from another source.
 blockquote {
   font-family: $ff-serif;
   font-style: italic;
@@ -263,12 +267,14 @@ blockquote {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative; /* This ensures it pushes the Hero down */
-  height: 60px;
+  //position: relative; /* This ensures it pushes the Hero down */
+  position: sticky;// change from relative if you want it to stick
+  height: clamp(60px, 8vw, 120px);
   top: 0;
   z-index: 100;
-  padding: 1rem 2rem; 
-  border-bottom: 1px solid rgba($reed, 0.12);
+  padding: 1rem clamp(1rem, 4vw, 4rem); 
+  border-bottom: 1px solid rgba($reed, 0.12);// ← scales with viewport width, never less than 1rem on small screens, 
+  //grows proportionally with viewport width (4vw), never more than 4rem on large screens
 
   .nav-brand {
     font-family: $ff-serif;
@@ -281,7 +287,7 @@ blockquote {
     align-items: center;
     gap: $sp-xs;
 
-    img { height: 32px; width: auto; border-radius: 0; }
+    img { height: clamp(32px, 5vw, 80px); width: auto; border-radius: 0; }
   }
 
   .nav-links {
@@ -291,6 +297,7 @@ blockquote {
     margin-left: auto;
     list-style: none;
     padding: 0;
+    margin-right: clamp(0.5rem, 3vw, 3rem);  // ← nudge left from the right edge
   }
 
   .nav-link {

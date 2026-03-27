@@ -27,16 +27,14 @@
 
   /* These are now nested inside .hero-section */
   h1 {
-    font-size: 3rem;
     color: #ffffff;
     line-height: 1.2;
     margin-bottom: 0.5rem;
-
-    em { color: #a4c3b2; font-style: italic; }
+    em { color: #a4c3b2; font-style: italic; }//"Whenever you see an emphasized word inside the hero section, give it this specific color and make sure it stays italic."
   }
 
   .hero-subtitle {
-    font-size: 0.9375rem;
+    font-size: 2rem;
     font-weight: 300;
     color: rgba(164,195,178,0.7);
     letter-spacing: 0.08em;
