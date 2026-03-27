@@ -31,15 +31,26 @@
     line-height: 1.2;
     margin-bottom: 0.5rem;
     em { color: #a4c3b2; font-style: italic; }//"Whenever you see an emphasized word inside the hero section, give it this specific color and make sure it stays italic."
-  }
-
+  } 
+    
+ .hero.has-image h1 {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+} 
+ 
   .hero-subtitle {
     font-size: 2rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 300;
-    color: rgba(164,195,178,0.7);
+    color: #ffffff;;
     letter-spacing: 0.08em;
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
+    margin-top: $sp-sm;
+    max-width: 700px;
+    line-height: $lh-lead;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);  // ← helps readability over images
   }
 
   .hero-attribution {

@@ -287,6 +287,14 @@ blockquote {
     align-items: center;
     gap: $sp-xs;
 
+     .nav-title {
+    font-family: $ff-serif;
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    font-weight: 600;
+    color: $white;
+    line-height: 1.2;
+  }
+
     img { height: clamp(32px, 5vw, 80px); width: auto; border-radius: 0; }
   }
 
@@ -336,7 +344,7 @@ blockquote {
 
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 12px);
+      top: calc(100% + 4px);
       left: 0;
       background: $deep-forest;
       border: 1px solid rgba($reed, 0.15);
@@ -350,6 +358,16 @@ blockquote {
       transition: opacity $transition-base, transform $transition-base;
       box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 
+      // ← invisible bridge covering the gap above the menu
+    &::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+    }
+      
       li a {
         display: block;
         padding: $sp-xs $sp-sm;
