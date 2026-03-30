@@ -7,30 +7,29 @@
 <footer class="site-footer">
   <div class="footer-inner">
 
-    <!-- Partner logos -->
-    {% if site.data.footer.partners %}
-    <div class="footer-logos">
-      {% for partner in site.data.footer.partners %}
-        <a href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name }}">
-          <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }}">
-        </a>
-      {% endfor %}
-    </div>
-    {% endif %}
-
-    <!-- Bottom row -->
-    <div class="footer-bottom">
-      <div>
-          <p class="footer-meta">{{ site.data.footer.tagline | default: 'Peatland restoration guidelines' }} · {{ site.time | date: '%Y' }}</p>
-      </div>
-
-      <ul class="footer-links">
-    {% if site.data.footer.links %}
-    {% for link in site.data.footer.links %}
-    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    <!-- Top row: logos + privacy link -->
+         text-decoration: none;
+<div class="footer-logos">
+  <div class="logos-left">
+    {% for partner in site.data.footer.partners %}
+      <a href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name }}">
+        <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }}">
+      </a>
     {% endfor %}
+  </div>
+
+  {% if site.data.footer.links %}
+    <nav class="footer-links">
+      {% for link in site.data.footer.links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
   {% endif %}
-</ul>
+</div>
+
+    <!-- Bottom row: tagline only -->
+    <div class="footer-bottom">
+      <p class="footer-meta">{{ site.data.footer.tagline | default: 'Peatland restoration guidelines' }} · {{ site.time | date: '%Y' }}</p>
     </div>
 
   </div>

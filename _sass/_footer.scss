@@ -6,39 +6,45 @@
 
 .site-footer {
   background: $deep-forest;
-  padding: $sp-xl $sp-3xl;
+  padding: $sp-md $sp-3xl; // ← reduced padding
   border-top: 1px solid rgba($reed, 0.1);
 
   .footer-inner {
     max-width: $max-content;
     margin: 0 auto;
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: $sp-md;
+    gap: $sp-sm; // ← reduced gap
   }
 
-  // Partner logos row
   .footer-logos {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between; // ← logos left, privacy right
     gap: $sp-md;
-    padding-bottom: $sp-md;
+    padding-bottom: $sp-sm;
     border-bottom: 1px solid rgba($reed, 0.1);
 
-    img {
-      height: 40px;
-      width: auto;
-      border-radius: 0;
-      filter: brightness(0) invert(1);
-      opacity: 0.5;
-      transition: opacity $transition-base;
-
-      &:hover { opacity: 0.85; }
-    }
+      // Group logos on the left
+  .logos-left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $sp-md;
   }
 
-  // Bottom row
+  img {
+    height: clamp(24px, 4vw, 48px);
+    width: auto;
+    border-radius: 0;
+    opacity: 1;
+    transition: opacity $transition-base;
+  &:hover { opacity: 0.5; }
+  }
+  }
+
   .footer-bottom {
     display: flex;
     align-items: center;
@@ -49,31 +55,29 @@
 
   .footer-brand {
     font-family: $ff-serif;
-    font-size: 1rem;
+    font-size: clamp(60px, 8vw, 120px);
     font-weight: 700;
     color: #F6FFF8;
   }
 
   .footer-meta {
-    font-size: $fs-caption;
-    color: rgba($reed, 0.4);
+    font-size: clamp(0.65rem, 1.2vw, 0.875rem);
+    color: rgba($reed, 1); // ← more visible than before
     letter-spacing: 0.05em;
-    margin-top: 4px;
   }
 
+  // Privacy centered absolutely
   .footer-links {
-    display: flex;
-    gap: $sp-sm;
-    list-style: none;
-    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 
     a {
-      font-size: $fs-caption;
-      color: rgba($reed, 0.45);
+      font-size: clamp(0.75rem, 1.5vw, 1rem);
+      color: rgba($reed, 1); // ← more visible
       text-decoration: none;
       border: none;
       transition: color $transition-base;
-
       &:hover { color: $fen; }
     }
   }
