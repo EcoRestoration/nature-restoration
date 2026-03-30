@@ -566,17 +566,22 @@ select {
 
 // ── Responsive ────────────────────────────────────────────────────────────────
 @media (max-width: 900px) {
+  .page-wrapper {
+    grid-template-columns: 1fr;
+    padding: $sp-md;
+  }
+
   .site-nav {
     padding: 0 $sp-sm;
 
     .nav-dropdown {
       &:hover .dropdown-menu,
       &:focus-within .dropdown-menu {
-        display: block;        // ← shows on tap/focus on mobile
+        display: block;
         opacity: 1;
         pointer-events: all;
         transform: translateY(0);
-        position: static;      // ← flows inline instead of floating
+        position: static;
         box-shadow: none;
         border: none;
         background: transparent;
@@ -589,7 +594,6 @@ select {
       }
     }
   }
-}
 
   .page-section .section-inner {
     padding: 0 $sp-sm;
