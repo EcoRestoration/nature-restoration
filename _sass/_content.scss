@@ -248,11 +248,11 @@ blockquote {
 // ── Page Layout ───────────────────────────────────────────────────────────────
 .page-wrapper {
   display: grid;
-  grid-template-columns: 1fr $sidebar-w;
+  grid-template-columns: 1fr clamp(180px, 20vw, 260px);  // ← sidebar shrinks with viewport
   gap: $sp-2xl;
   max-width: $max-content;
   margin: 0 auto;
-  padding: $sp-3xl $sp-lg $sp-3xl $sp-3xl;
+  padding: $sp-3xl $sp-2xl;           // ← more breathing room on sides
   align-items: start;
 }
 
@@ -271,7 +271,8 @@ blockquote {
   position: sticky;// change from relative if you want it to stick
   height: clamp(60px, 8vw, 120px);
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  height: clamp(60px, 8vw, 120px);
   padding: 1rem clamp(1rem, 4vw, 4rem); 
   border-bottom: 1px solid rgba($reed, 0.12);// ← scales with viewport width, never less than 1rem on small screens, 
   //grows proportionally with viewport width (4vw), never more than 4rem on large screens
@@ -289,7 +290,7 @@ blockquote {
 
      .nav-title {
     font-family: $ff-serif;
-    font-size: clamp(60px, 8vw, 120px) //clamp(0.75rem, 1.5vw, 1rem);
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
     font-weight: 600;
     color: $white;
     line-height: 1.2;
@@ -310,9 +311,9 @@ blockquote {
 
   .nav-link {
     font-family: $ff-sans;
-    font-size: $fs-nav;
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
     font-weight: 400;
-    color: rgba($reed, 0.65);
+    color: rgba($reed, 1);
     text-decoration: none;
     border: none;
     letter-spacing: 0.03em;
@@ -565,23 +566,30 @@ select {
 
 // ── Responsive ────────────────────────────────────────────────────────────────
 @media (max-width: 900px) {
-  .page-wrapper {
-    grid-template-columns: 1fr;
-    padding: $sp-md;
-  }
-
   .site-nav {
     padding: 0 $sp-sm;
 
-    .nav-dropdown .dropdown-menu {
-      position: static;
-      opacity: 1;
-      pointer-events: all;
-      transform: none;
-      box-shadow: none;
-      display: none;
+    .nav-dropdown {
+      &:hover .dropdown-menu,
+      &:focus-within .dropdown-menu {
+        display: block;        // ← shows on tap/focus on mobile
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+        position: static;      // ← flows inline instead of floating
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding: 0;
+
+        li a {
+          padding: $sp-xs $sp-sm;
+          font-size: $fs-nav;
+        }
+      }
     }
   }
+}
 
   .page-section .section-inner {
     padding: 0 $sp-sm;

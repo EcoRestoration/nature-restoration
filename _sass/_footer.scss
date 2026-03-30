@@ -6,7 +6,7 @@
 
 .site-footer {
   background: $deep-forest;
-  padding: $sp-md $sp-3xl; // ← reduced padding
+  padding: $sp-sm clamp(1rem, 4vw, 4rem);   // ← matches navbar exactly; top | sides | bottom
   border-top: 1px solid rgba($reed, 0.1);
 
   .footer-inner {
@@ -18,14 +18,13 @@
     gap: $sp-sm; // ← reduced gap
   }
 
-  .footer-logos {
+ .footer-logos {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between; // ← logos left, privacy right
-    gap: $sp-md;
     padding-bottom: $sp-sm;
+    border-bottom: none;  
     border-bottom: 1px solid rgba($reed, 0.1);
+    position: relative;
 
       // Group logos on the left
   .logos-left {
@@ -35,38 +34,25 @@
     gap: $sp-md;
   }
 
+  a {
+    border: none;               // ← removes white border around logos
+    outline: none;
+    display: inline-flex;
+  }
+  
   img {
     height: clamp(24px, 4vw, 48px);
     width: auto;
-    border-radius: 0;
+    border: none;               // ← removes white border
+    outline: none;
+    border-radius: 0;           // ← no rounding
     opacity: 1;
     transition: opacity $transition-base;
-  &:hover { opacity: 0.5; }
+  &:hover { opacity: 0.6; }
   }
   }
 
-  .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: $sp-sm;
-  }
-
-  .footer-brand {
-    font-family: $ff-serif;
-    font-size: clamp(60px, 8vw, 120px);
-    font-weight: 700;
-    color: #F6FFF8;
-  }
-
-  .footer-meta {
-    font-size: clamp(0.65rem, 1.2vw, 0.875rem);
-    color: rgba($reed, 1); // ← more visible than before
-    letter-spacing: 0.05em;
-  }
-
-  // Privacy centered absolutely
+  // Privacy centered in the top row
   .footer-links {
     position: absolute;
     left: 50%;
@@ -74,18 +60,42 @@
 
     a {
       font-size: clamp(0.75rem, 1.5vw, 1rem);
-      color: rgba($reed, 1); // ← more visible
+      color: rgba($reed, 1);
       text-decoration: none;
-      border: none;
       transition: color $transition-base;
       &:hover { color: $fen; }
     }
+  }
+
+  //bottom bar
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    padding-top: $sp-xs;
+    padding-bottom: $sp-xs;
+  }
+
+  .footer-meta {
+    font-size: clamp(0.65rem, 1.2vw, 0.875rem);
+    color: rgba($reed, 1);
+    letter-spacing: 0.05em;
   }
 }
 
 @media (max-width: 700px) {
   .site-footer {
-    padding: $sp-xl $sp-sm;
+    padding: $sp-md $sp-sm;
+
+    .footer-logos {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $sp-sm;
+
+      .footer-links {
+        position: static;
+        transform: none;
+      }
+    }
 
     .footer-bottom {
       flex-direction: column;
