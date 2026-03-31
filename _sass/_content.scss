@@ -118,7 +118,7 @@ strong { font-weight: 600; color: $deep-forest; }
 em     { font-style: italic; color: $muted; }
 
 // Caption / small
-small, .caption, figcaption {
+small, .caption {
   font-size: $fs-caption;
   color: $muted;
   line-height: $lh-caption;
@@ -208,7 +208,7 @@ figcaption {
   font-size: $fs-caption;
   color: $muted;
   text-align: left;
-  margin-top: $sp-sm;
+  margin-top: $sp-xl;
   font-style: normal;
   line-height: $lh-body;
 }

@@ -62,5 +62,7 @@ soil (pH, nutrient level, minerality, ...), vegetation structure & composition
 and peat stratigraphy. Some of the key classification components and their 
 relationship with different peatland types are given in Figure 1.
 
-![Figure 1: A general scheme to define the position of broad terrestrial wetland types in an ordination based on the two most important environmental gradients.]({{ site.baseurl }}/assets/images/figure1.png)
-*Figure 1: A general scheme to define the position of broad terrestrial wetland types in an ordination based on the two most important environmental gradients. Wetness, or distance between vegetation surface and water table, varies along the vertical axis, and the complex gradient with variation in pH, base saturation, and nutrient status is depicted along the horizontal axis. Image adapted from Rydin & Jeglum (2013).*
+<figure>
+<img src="{{ site.baseurl }}/assets/images/figure1.png" alt="Figure 1">
+  <figcaption>Figure 1: A general scheme to define the position of broad terrestrial wetland types in an ordination based on the two most important environmental gradients. Wetness, or distance between vegetation surface and water table, varies along the vertical axis, and the complex gradient with variation in pH, base saturation, and nutrient status is depicted along the horizontal axis. Image adapted from Rydin & Jeglum (2013).</figcaption>
+</figure>
