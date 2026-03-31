@@ -21,30 +21,25 @@ body {
   background: $white;
 }
 
-// ── Google Fonts CSS Variables (for use anywhere) ─────────────────────────────
+// ── Google Fonts CSS Variables ────────────────────────────────────────────────
 :root {
-  --sedge:       #{$sedge};
-  --reed:        #{$reed};
-  --fen:         #{$fen};
-  --mist:        #{$mist};
-  --bloom:       #{$bloom};
-  --deep-forest: #{$deep-forest};
-  --bog-ink:     #{$bog-ink};
-  --deep-sedge:  #{$deep-sedge};
-  --muted:       #{$muted};
+  --sedge:           #{$sedge};
+  --reed:            #{$reed};
+  --fen:             #{$fen};
+  --mist:            #{$mist};
+  --bloom:           #{$bloom};
+  --deep-forest:     #{$deep-forest};
+  --bog-ink:         #{$bog-ink};
+  --deep-sedge:      #{$deep-sedge};
+  --muted:           #{$muted};
   --peat-gold:       #{$peat-gold};
   --peat-gold-light: #{$peat-gold-light};
-  --white:       #{$white};
-  --ff-serif:    #{$ff-serif};
-  --ff-sans:     #{$ff-sans};
+  --white:           #{$white};
+  --ff-serif:        #{$ff-serif};
+  --ff-sans:         #{$ff-sans};
 }
 
 // ── Typography ────────────────────────────────────────────────────────────────
-
-// Markdown content is wrapped in .page-content
-// Headings inside .page-content are auto-styled.
-// Each h1 triggers a new section (handled via JS in default.html).
-
 h1, h2, h3, h4 {
   font-family: $ff-serif;
   color: $deep-forest;
@@ -95,7 +90,7 @@ p {
   max-width: $max-body;
 }
 
-// Lead paragraph — first <p> after h1 or .lead class
+// Lead paragraph
 .lead, .page-content > p:first-of-type {
   font-size: $fs-lead;
   font-weight: 300;
@@ -103,7 +98,8 @@ p {
   line-height: $lh-lead;
   margin-bottom: $sp-md;
 }
-// hyperlinks
+
+// Hyperlinks
 a {
   color: $sedge;
   text-decoration: none;
@@ -128,10 +124,10 @@ small, .caption, figcaption {
   line-height: $lh-caption;
   letter-spacing: 0.02em;
   display: block;
-  margin-top: $sp-md;
+  margin-top: $sp-sm;
 }
 
-// Eyebrow label — add class="eyebrow" or use the include
+// Eyebrow label
 .eyebrow {
   font-family: $ff-sans;
   font-size: $fs-eyebrow;
@@ -140,7 +136,7 @@ small, .caption, figcaption {
   text-transform: uppercase;
   color: $sedge;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: $sp-xs;
 }
 
 // Horizontal rule
@@ -166,7 +162,7 @@ ul, ol {
   }
 }
 
-// Code / monospace
+// Code
 code {
   font-family: 'Courier New', monospace;
   font-size: 0.88em;
@@ -176,8 +172,6 @@ code {
   border-radius: 3px;
 }
 
-//<pre> tells the browser: "Don't touch the spacing or line breaks."
-//<code> tells the browser (and search engines): "This specific text is a computer language."
 pre {
   background: $deep-forest;
   color: $reed;
@@ -193,7 +187,6 @@ pre {
   }
 }
 
-// Images
 // Images — global rule excludes navbar
 img:not(.site-nav img) {
   max-width: 100%;
@@ -214,15 +207,16 @@ img:not(.site-nav img) {
 figcaption {
   font-size: $fs-caption;
   color: $muted;
-  text-align: center;
-  margin-top: $sp-xs;
+  text-align: left;
+  margin-top: $sp-sm;
+  font-style: normal;
+  line-height: $lh-body;
 }
 
-// the <blockquote> is used to indicate that a section of text is quoted from another source.
 blockquote {
   font-family: $ff-serif;
   font-style: italic;
-  font-size: 1.125rem;
+  font-size: $fs-lead;          // ← uses responsive variable
   color: $muted;
   border-left: 3px solid $sedge;
   padding: $sp-sm $sp-md;
@@ -232,42 +226,33 @@ blockquote {
 }
 
 // ── Section System ────────────────────────────────────────────────────────────
-// Each h1 on a content page is wrapped in a .page-section by JS (see default.html)
-// Sections alternate between white and $mist background
-
 .page-section {
   padding: $sp-3xl 0;
   border-bottom: 1px solid $mist;
 
-  &:nth-child(even) {
-    background: $bloom;
-  }
+  &:nth-child(even) { background: $bloom; }
+  &:nth-child(odd)  { background: $white; }
 
-  &:nth-child(odd) {
-    background: $white;
-  }
-
-  // Inner wrapper constrains content width
   .section-inner {
     max-width: $max-content;
     margin: 0 auto;
-    padding: 0 $sp-3xl;
+    padding: 0 $sp-3xl;        // ← responsive via variable
   }
 }
 
 // ── Page Layout ───────────────────────────────────────────────────────────────
 .page-wrapper {
   display: grid;
-  grid-template-columns: 1fr clamp(180px, 20vw, 260px);  // ← sidebar shrinks with viewport
-  gap: $sp-2xl;
+  grid-template-columns: 1fr clamp(180px, 20vw, 260px);
+  gap: $sp-2xl;                 // ← responsive via variable
   max-width: $max-content;
   margin: 0 auto;
-  padding: $sp-3xl $sp-2xl;           // ← more breathing room on sides
+  padding: $sp-3xl $sp-2xl;    // ← responsive via variable
   align-items: start;
 }
 
 .page-content {
-  min-width: 0; // prevent grid blowout
+  min-width: 0;
 }
 
 // ── Buttons ───────────────────────────────────────────────────────────────────
@@ -276,14 +261,14 @@ blockquote {
   font-size: $fs-btn;
   font-weight: 600;
   letter-spacing: 0.06em;
-  padding: 11px 24px;
+  padding: clamp(8px, 1.5vw, 11px) clamp(16px, 3vw, 24px);  // ← responsive
   border-radius: $radius-sm;
   border: none;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
   transition: background $transition-base, color $transition-base, border-color $transition-base;
-  border-bottom: none; // override global link style
+  border-bottom: none;
   line-height: 1;
 }
 
@@ -333,7 +318,7 @@ blockquote {
 
   .card-title {
     font-family: $ff-serif;
-    font-size: 1.0625rem;
+    font-size: $fs-h3;          // ← uses responsive variable
     font-weight: 600;
     color: $deep-forest;
     line-height: $lh-sub;
@@ -341,7 +326,7 @@ blockquote {
   }
 
   .card-excerpt {
-    font-size: 0.8125rem;
+    font-size: $fs-body;        // ← uses responsive variable
     font-weight: 300;
     color: $muted;
     line-height: 1.65;
@@ -385,7 +370,7 @@ blockquote {
     display: block;
   }
 
-  p { font-size: 0.875rem; line-height: 1.7; margin: 0; }
+  p { font-size: $fs-body; line-height: 1.7; margin: 0; }
 }
 
 .callout-green {
@@ -423,9 +408,9 @@ input[type="search"],
 textarea,
 select {
   font-family: $ff-sans;
-  font-size: 0.875rem;
+  font-size: $fs-body;          // ← uses responsive variable
   font-weight: 400;
-  padding: 10px 14px;
+  padding: clamp(8px, 1.5vw, 10px) clamp(10px, 2vw, 14px);  // ← responsive
   border: $border-input;
   border-radius: $radius-sm;
   background: $white;
@@ -434,7 +419,7 @@ select {
   transition: border-color $transition-base;
   width: 100%;
 
-  &:focus    { border-color: $sedge; }
+  &:focus       { border-color: $sedge; }
   &::placeholder { color: $reed; }
 }
 
@@ -445,22 +430,17 @@ select {
 .text-center  { text-align: center; }
 .mt-0         { margin-top: 0; }
 .mb-0         { margin-bottom: 0; }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+.sr-only      { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
 
 // ── Responsive ────────────────────────────────────────────────────────────────
 @media (max-width: 900px) {
   .page-wrapper {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;  // ← two rows
+    grid-template-rows: auto auto;
     padding: $sp-md;
 
-    .page-content {
-      order: 2;    // ← content second
-    }
-
-    aside {
-      order: 1;    // ← TOC first
-    }
+    .page-content { order: 2; }
+    aside         { order: 1; }
   }
 
   .page-section .section-inner {
@@ -472,7 +452,7 @@ select {
   }
 }
 
-// prevents any element from causing horizontal overflow
+// Prevent horizontal overflow
 html, body {
   max-width: 100%;
   overflow-x: hidden;
