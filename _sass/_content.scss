@@ -260,133 +260,6 @@ blockquote {
   min-width: 0; // prevent grid blowout
 }
 
-// ── Navbar ────────────────────────────────────────────────────────────────────
-// Navbar styles are in navbar.html inline or you can add here:
-.site-nav {
-  background: $deep-forest;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  //position: relative; /* This ensures it pushes the Hero down */
-  position: sticky;// change from relative if you want it to stick
-  height: clamp(60px, 8vw, 120px);
-  top: 0;
-  z-index: 1000;
-  height: clamp(60px, 8vw, 120px);
-  padding: 1rem clamp(1rem, 4vw, 4rem); 
-  border-bottom: 1px solid rgba($reed, 0.12);// ← scales with viewport width, never less than 1rem on small screens, 
-  //grows proportionally with viewport width (4vw), never more than 4rem on large screens
-
-  .nav-brand {
-    font-family: $ff-serif;
-    font-size: clamp(60px, 8vw, 120px);
-    font-weight: 700;
-    color: $white;
-    text-decoration: none;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: $sp-xs;
-
-     .nav-title {
-    font-family: $ff-serif;
-    font-size: clamp(0.75rem, 1.5vw, 1rem);
-    font-weight: 600;
-    color: $white;
-    line-height: 1.2;
-  }
-
-    img { height: clamp(32px, 5vw, 80px); width: auto; border-radius: 0; }
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: $sp-md;
-    margin-left: auto;
-    list-style: none;
-    padding: 0;
-    margin-right: clamp(0.5rem, 3vw, 3rem);  // ← nudge left from the right edge
-  }
-
-  .nav-link {
-    font-family: $ff-sans;
-    font-size: clamp(0.75rem, 1.5vw, 1rem);
-    font-weight: 400;
-    color: rgba($reed, 1);
-    text-decoration: none;
-    border: none;
-    letter-spacing: 0.03em;
-    padding-bottom: 3px;
-    border-bottom: 1px solid transparent;
-    transition: color $transition-base, border-color $transition-base;
-
-    &:hover, &.active {
-      color: $fen;
-      border-bottom-color: $reed;
-    }
-  }
-
-  // Dropdown
-  .nav-dropdown {
-    position: relative;
-
-    &:hover .dropdown-menu {
-      opacity: 1;
-      pointer-events: all;
-      transform: translateY(0);
-    }
-
-    .dropdown-toggle::after {
-      content: ' ▾';
-      font-size: 0.6em;
-      opacity: 0.6;
-    }
-
-    .dropdown-menu {
-      position: absolute;
-      top: calc(100% + 4px);
-      left: 0;
-      background: $deep-forest;
-      border: 1px solid rgba($reed, 0.15);
-      border-radius: $radius-md;
-      padding: $sp-xs 0;
-      min-width: 200px;
-      list-style: none;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(-8px);
-      transition: opacity $transition-base, transform $transition-base;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-
-      // ← invisible bridge covering the gap above the menu
-    &::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: 0;
-      right: 0;
-      height: 8px;
-    }
-      
-      li a {
-        display: block;
-        padding: $sp-xs $sp-sm;
-        font-size: $fs-nav;
-        color: rgba($reed, 0.7);
-        text-decoration: none;
-        border: none;
-        transition: background $transition-fast, color $transition-fast;
-
-        &:hover {
-          background: rgba($fen, 0.06);
-          color: $fen;
-        }
-      }
-    }
-  }
-}
-
 // ── Buttons ───────────────────────────────────────────────────────────────────
 %btn-base {
   font-family: $ff-sans;
@@ -571,30 +444,6 @@ select {
     padding: $sp-md;
   }
 
-  .site-nav {
-    padding: 0 $sp-sm;
-
-    .nav-dropdown {
-      &:hover .dropdown-menu,
-      &:focus-within .dropdown-menu {
-        display: block;
-        opacity: 1;
-        pointer-events: all;
-        transform: translateY(0);
-        position: static;
-        box-shadow: none;
-        border: none;
-        background: transparent;
-        padding: 0;
-
-        li a {
-          padding: $sp-xs $sp-sm;
-          font-size: $fs-nav;
-        }
-      }
-    }
-  }
-
   .page-section .section-inner {
     padding: 0 $sp-sm;
   }
@@ -604,7 +453,7 @@ select {
   }
 }
 
-//prevents any element from causing horizontal overflow and pushing the page wider than the viewport.//
+// prevents any element from causing horizontal overflow
 html, body {
   max-width: 100%;
   overflow-x: hidden;

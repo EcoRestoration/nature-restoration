@@ -88,18 +88,27 @@
 
     .footer-logos {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;        // ← center everything on mobile
       gap: $sp-sm;
 
+      .logos-left {
+        justify-content: center;  // ← center logos
+        width: 100%;
+      }
+
+      // Privacy stays centered below logos
       .footer-links {
-        position: static;
+        position: static;         // ← drop out of absolute positioning
         transform: none;
+        width: 100%;
+        text-align: center;       // ← center the text
+        margin-top: $sp-xs;
       }
     }
 
     .footer-bottom {
-      flex-direction: column;
-      align-items: flex-start;
+      justify-content: center;    // ← center tagline too
+      text-align: center;
     }
   }
 }

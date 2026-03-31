@@ -1,12 +1,18 @@
 <!-- File: _includes/navbar.html -->
 <nav class="site-nav" aria-label="Main navigation">
   <a href="{{ '/' | relative_url }}" class="nav-brand" aria-label="home">
-    <!-- Replace src with your actual logo path -->
     <img src="{{ '/assets/images/created_logo.png' | relative_url }}" alt="Nature restoration logo" onerror="this.style.display='none'">
     <span class="nav-title">Peatland restoration guidelines</span>
   </a>
 
-  <ul class="nav-links">
+  <!-- Hamburger button (mobile only) -->
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <ul class="nav-links" id="nav-links">
     {% for item in site.data.navigation.main %}
       {% if item.children %}
         <li class="nav-dropdown">
@@ -37,3 +43,12 @@
     {% endfor %}
   </ul>
 </nav>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
