@@ -451,7 +451,16 @@ select {
 @media (max-width: 900px) {
   .page-wrapper {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto;  // ← two rows
     padding: $sp-md;
+
+    .page-content {
+      order: 2;    // ← content second
+    }
+
+    aside {
+      order: 1;    // ← TOC first
+    }
   }
 
   .page-section .section-inner {

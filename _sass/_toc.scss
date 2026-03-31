@@ -64,3 +64,15 @@
 .toc-sidebar::-webkit-scrollbar { width: 3px; }
 .toc-sidebar::-webkit-scrollbar-track { background: transparent; }
 .toc-sidebar::-webkit-scrollbar-thumb { background: $fen; border-radius: 2px; }
+
+//Addition for mobile view
+@media (max-width: 900px) {
+  .toc-sidebar {
+    position: static;       // ← remove sticky on mobile
+    max-height: none;       // ← show all items
+    overflow-y: visible;
+    border-bottom: 1px solid $fen;
+    padding-bottom: $sp-sm;
+    margin-bottom: $sp-md;
+  }
+}
