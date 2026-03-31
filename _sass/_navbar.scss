@@ -33,7 +33,12 @@
       line-height: 1.2;
     }
 
-    img { height: clamp(32px, 5vw, 80px); width: auto; border-radius: 0; }
+    img { height: clamp(32px, 5vw, 80px)! important; // ← !important overrides global img rule
+          width: auto; 
+          border-radius: 0; 
+          display: block;
+          flex-shrink: 0;                              // ← prevents it from growing
+    }
   }
 
   // Hamburger button — hidden on desktop

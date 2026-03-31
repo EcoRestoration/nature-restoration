@@ -104,7 +104,6 @@ p {
   margin-bottom: $sp-md;
 }
 // hyperlinks
-
 a {
   color: $sedge;
   text-decoration: none;
@@ -195,10 +194,21 @@ pre {
 }
 
 // Images
-img {
+// Images — global rule excludes navbar
+img:not(.site-nav img) {
   max-width: 100%;
   border-radius: $radius-md;
   display: block;
+}
+
+// Navbar logo — explicit size control
+.site-nav img {
+  height: clamp(32px, 5vw, 80px);
+  width: auto;
+  max-width: none;
+  border-radius: 0;
+  display: block;
+  flex-shrink: 0;
 }
 
 figcaption {
