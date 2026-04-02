@@ -7,4 +7,3 @@ hero_subtitle: "Practical restoration pathways for Europe's mires, bogs and fens
 permalink: /
 ---
 
-{{ content }}

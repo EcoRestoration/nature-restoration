@@ -20,7 +20,7 @@
   {% if site.data.footer.links %}
     <nav class="footer-links">
       {% for link in site.data.footer.links %}
-        <a href="{{ link.url }}">{{ link.title }}</a>
+        <a href="{{ link.url | relative_url }}">{{ link.title }}</a> <!--Adding | relative_url tells Jekyll to look inside your specific project folder instead.-->
       {% endfor %}
     </nav>
   {% endif %}
