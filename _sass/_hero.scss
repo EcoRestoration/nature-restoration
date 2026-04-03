@@ -10,9 +10,8 @@
   justify-content: center;
   text-align: center;
   color: #ffffff;
-  background-color: $sedge; // fallback while image loads
+  background-color: $sedge;
 
-  // Photo only
   &.has-image {
     background-image: var(--hero-image);
     background-size: cover;
@@ -20,7 +19,6 @@
     background-repeat: no-repeat;
   }
 
-  // Photo + dark overlay
   &.has-overlay {
     background-image:
       linear-gradient(rgba(20, 50, 35, 0.68), rgba(20, 50, 35, 0.68)),
@@ -29,46 +27,46 @@
     background-position: center;
     background-repeat: no-repeat;
   }
-}
 
-  /* These are now nested inside .hero-section */
   h1 {
     color: #ffffff;
     line-height: 1.2;
     margin-bottom: 0.5rem;
-    em { color: #a4c3b2; font-style: italic; }//"Whenever you see an emphasized word inside the hero section, give it this specific color and make sure it stays italic."
-  } 
-    
- .hero.has-image h1 {
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0) 70%
-  );
-} 
- 
+    em {
+      color: #a4c3b2;
+      font-style: italic;
+    }
+  }
+
+  &.has-image h1 {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+  }
+
   .hero-subtitle {
-    font-size: 2rem;
     font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 300;
-    color: #ffffff;;
+    color: #ffffff;
     letter-spacing: 0.08em;
     margin-top: $sp-sm;
     max-width: 700px;
     line-height: $lh-lead;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.4);  // ← helps readability over images
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
   }
 
   .hero-attribution {
     position: absolute;
-    bottom: 15px;      /* Distance from the bottom edge */
-    right: 20px;       /* Distance from the right edge */
-    font-size: 0.75rem; /* Small, subtle text */
-    color: rgba(255, 255, 255, 0.7); /* Slightly transparent */
+    bottom: 15px;
+    right: 20px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
     font-family: $ff-sans;
-    background: rgba(0, 0, 0, 0.3); /* Dark box to make it readable on light photos */
+    background: rgba(0, 0, 0, 0.3);
     padding: 4px 10px;
     border-radius: 4px;
-    pointer-events: none; /* Ensures it doesn't block clicks */
+    pointer-events: none;
   }
 }
