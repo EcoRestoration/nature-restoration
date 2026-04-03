@@ -26,7 +26,7 @@
   {% include navbar.html %}
 
 <section class="hero {% if page.hero_overlay %}has-overlay{% elsif page.hero_image %}has-image{% endif %}"
-         style="{% if page.hero_image %}--hero-image: url('{{ page.hero_image | relative_url }}');{% endif %}">
+         {% if page.hero_image %}style="--hero-image: url('{{ page.hero_image | relative_url }}')"{% endif %}>
   <div class="hero-inner">
     <h1>{{ page.title }}</h1>
     {% if page.hero_subtitle %}
