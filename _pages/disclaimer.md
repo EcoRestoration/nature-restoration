@@ -6,7 +6,8 @@ layout: base
 
 ## Legal notice
 This legal notice governs access to and use of the Peatland restoration website. By accessing and using this website, the user agrees to comply with the present terms and conditions.
-The website [https://ecorestoration.github.io/nature-restoration/](https://ecorestoration.github.io/nature-restoration/) is built by ALFAwetlands and funded by EU. The website will be accurate and up to date during the project period.
+The website [https://ecorestoration.github.io/nature-restoration/](https://ecorestoration.github.io/nature-restoration/) is built by ALFAwetlands and funded by EU. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or CINEA. Neither the European Union nor the granting authority can be held responsible for them. 
+The website will be accurate and up to date during the project period.
 ALFAwetlands reserves the right to amend this notice at any time and without prior notice.
 
 ## Intellectual property rights
