@@ -1,6 +1,8 @@
 ---
 title: Disclaimer
 permalink: /disclaimer/
+hero_image: /assets/backgrounds/forest_moss.jpg
+hero_overlay: true   # omit for photo only
 layout: base
 ---
 

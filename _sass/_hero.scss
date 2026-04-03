@@ -1,29 +1,35 @@
 // ── Hero Section ─────────────────────────────────────────────────────────────//
 
 .hero {
-  background-color: $sedge; // fallback for pages without image
-  background-size: cover;
-  background-position: center;
-  position: relative; /* This is required for absolute positioning to work */
-  min-height: 200px; /* Force it to take up space */
-  display: flex;     /* Needed to show the content inside */
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #ffffff; 
+  color: #ffffff;
+  background-color: $sedge; // fallback while image loads
 
-  /* Specific styling for the Image version */
+  // Photo only
   &.has-image {
+    background-image: var(--hero-image);
     background-size: cover;
     background-position: center;
-    background-color: #333; 
+    background-repeat: no-repeat;
   }
 
-  /* Specific styling for the Plain Color version */
-  &.has-color {
-    background-color: #2e7d32; 
+  // Photo + dark overlay
+  &.has-overlay {
+    background-image:
+      linear-gradient(rgba(20, 50, 35, 0.68), rgba(20, 50, 35, 0.68)),
+      var(--hero-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
+}
 
   /* These are now nested inside .hero-section */
   h1 {

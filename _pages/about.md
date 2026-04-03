@@ -1,6 +1,8 @@
 ---
 title: About
 description: Information about the context, projects and their funding 
+hero_image: /assets/backgrounds/ferns.jpg
+hero_overlay: true   # omit for photo only
 permalink: /about/
 layout: base
 ---
