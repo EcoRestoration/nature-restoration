@@ -8,6 +8,17 @@ Usage:
 %}
 -->
 <div class="card">
+  {% if include.image %}
+    <div class="card-image-wrapper">
+      <img class="card-image" src="{{ include.image | relative_url }}" alt="{{ include.alt }}">
+      {% if include.credit %}
+        <span class="card-attribution">© {{ include.credit }}</span>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if include.label %}
+    <span class="card-label">{{ include.label }}</span>
+  {% endif %}
   {% if include.tag %}
     <span class="card-tag">{{ include.tag }}</span>
   {% endif %}
@@ -16,6 +27,6 @@ Usage:
     <p class="card-excerpt">{{ include.excerpt }}</p>
   {% endif %}
   {% if include.url %}
-    <a href="{{ include.url | relative_url }}" class="btn-secondary" style="margin-top:1rem;">Read more</a>
+    <a href="{{ include.url | relative_url }}" class="btn">Learn more</a>
   {% endif %}
 </div>
