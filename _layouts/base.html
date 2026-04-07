@@ -7,13 +7,9 @@ layout: default
     {{ content }}
   </article>
 
-  <aside>
-    {% include toc.html %}
-  </aside>
+  {% unless page.toc == false %}
+    <aside>
+      {% include toc.html %}
+    </aside>
+  {% endunless %}
 </div>
-
-{% unless page.toc == false %}
-  <aside>
-    {% include toc.html %}
-  </aside>
-{% endunless %}

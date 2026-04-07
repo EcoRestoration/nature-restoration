@@ -12,7 +12,7 @@ toc: false
 Peatlands are among the planet’s most powerful natural allies—quietly storing vast amounts of carbon, supporting rare biodiversity, and regulating water systems. Yet when they are degraded, they shift from protectors to sources of emissions. Restoring peatlands is not just an environmental act; it is an investment in climate stability, resilience, and the health of future generations.
 
 <blockquote>
-To restore peatlands is to restore balance—between land and water, climate and life.”
+"To restore peatlands is to restore balance—between land and water, climate and life.”
 </blockquote>
 
 <div class="card-grid">
