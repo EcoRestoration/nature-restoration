@@ -16,14 +16,6 @@ To restore peatlands is to restore balance—between land and water, climate and
 </blockquote>
 
 <div class="card-grid">
-  {% include card.html
-    image="/assets/images/buitengoor.jpg"
-    alt="Buitengoor, Belgium"
-    credit="Yves Adams, Vilda"
-    label="Peatlands"
-    title="Peatland Restoration"
-    excerpt="Discover how peatland restoration helps combat climate change and restore biodiversity."
-    url="/peatlands/"
-  %}
+  {% include card.html image='/assets/images/buitengoor.jpg' alt='Buitengoor, Belgium' credit='Yves Adams, Vilda' label='Peatlands' title='Peatland Restoration' excerpt='Guidelines for peatland restoration.' url='/peatlands/' %}
 </div>
 <!-- when you add the next two cards you just add more {% include card.html ... %} lines inside the grid.-->
