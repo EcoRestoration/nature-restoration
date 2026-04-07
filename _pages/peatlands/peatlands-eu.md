@@ -1,7 +1,7 @@
 ---
 title: Peatlands in the EU
 description: What are peatlands? Why is it important to restore them?
-hero_image: "/assets/backgrounds/Buitengoor_Yves_Adams_A8_74823.jpg"
+hero_image: "/assets/backgrounds/Buitengoor2.jpg"
 image_credit: "Yves Adams, Vilda"
 permalink: /peatlands/peatlands-eu/
 ---

@@ -14,14 +14,36 @@ Peatlands may appear quiet and unassuming, yet they hold immense power in shapin
 </blockquote>
 
 <div class="card-grid">
+  
   <div class="card">
     <div class="card-image-wrapper">
-      <img class="card-image" src="{{ '/assets/backgrounds/Buitengoor3.jpg' | relative_url }}" alt="Buitengoor, Belgium">
+      <img class="card-image" src="{{ '/assets/backgrounds/Buitengoor2.jpg' | relative_url }}" alt="Buitengoor, Belgium">
       <span class="card-attribution">© Yves Adams, Vilda</span>
     </div>
-    <span class="card-label">Peatlands</span>
-    <h3 class="card-title">Peatland Restoration</h3>
-    <p class="card-excerpt">Guidelines for peatland restoration.</p>
-    <a href="{{ '/peatlands/' | relative_url }}" class="btn">Learn more</a>
+    <h3 class="card-title">Peatlands in the EU</h3>
+    <p class="card-excerpt">How European policy frameworks support and drive peatland restoration efforts.</p>
+    <a href="{{ '/peatlands/peatlands-eu/' | relative_url }}" class="btn">Learn more</a>
   </div>
+  
+  <div class="card">
+    <div class="card-image-wrapper">
+      <img class="card-image" src="{{ '/assets/backgrounds/De_Teut.jpg' | relative_url }}" alt="De Teut, Belgium">
+      <span class="card-attribution">© Yves Adams, Vilda</span>
+    </div>
+    <h3 class="card-title">Restoration Guidelines</h3>
+    <p class="card-excerpt">Step-by-step guidance for restoring degraded peatlands across Europe.</p>
+    <a href="{{ '/peatlands/guidelines/' | relative_url }}" class="btn">Learn more</a>
+  </div>
+
+  <div class="card">
+    <div class="card-image-wrapper">
+      <img class="card-image" src="{{ '/assets/backgrounds/Buitengoor1.jpg' | relative_url }}" alt="Buitengoor, Belgium">
+      <span class="card-attribution">© Yves Adams, Vilda</span>
+    </div>
+    <h3 class="card-title">Best Practices</h3>
+    <p class="card-excerpt">Practical approaches and lessons learned from peatland restoration projects.</p>
+    <a href="{{ '/peatlands/best-practices/' | relative_url }}" class="btn">Learn more</a>
+  </div>
+
+
 </div>
