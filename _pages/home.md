@@ -5,6 +5,7 @@ hero_image: "/assets/backgrounds/Veengebied_in_Finland_Yves_Adams_A4_74825.jpg"
 image_credit: "Yves Adams, Vilda"
 hero_subtitle: "Practical restoration pathways for Europe's mires, bogs and fens"
 permalink: /
+toc: false
 ---
 
 
@@ -13,3 +14,16 @@ Peatlands are among the planet’s most powerful natural allies—quietly storin
 <blockquote>
 To restore peatlands is to restore balance—between land and water, climate and life.”
 </blockquote>
+
+<div class="card-grid">
+  <div class="card">
+    <div class="card-image-wrapper">
+      <img class="card-image" src="/assets/images/buitengoor.jpg" alt="Buitengoor, Belgium">
+      <span class="card-attribution">© Yves Adams</span>
+    </div>
+    <span class="card-label">Peatlands</span>
+    <h3 class="card-title">Peatland Restoration</h3>
+    <p class="card-excerpt">Discover how peatland restoration helps combat climate change and restore biodiversity.</p>
+    <a href="/peatlands/" class="btn">Learn more</a>
+  </div>
+</div>

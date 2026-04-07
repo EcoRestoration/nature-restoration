@@ -11,3 +11,9 @@ layout: default
     {% include toc.html %}
   </aside>
 </div>
+
+{% unless page.toc == false %}
+  <aside>
+    {% include toc.html %}
+  </aside>
+{% endunless %}
