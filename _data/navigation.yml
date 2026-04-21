@@ -11,3 +11,10 @@ main:
         url: /peatlands/guidelines/
       - title: Best Practices
         url: /peatlands/best-practices/
+  - title: Landscape perspectives
+    url: /landscape/
+    children:
+      - title: Wetlands
+        url: /landscape/wetlands/
+      - title: Waterscapes
+        url: /landscape/waterscapes/
